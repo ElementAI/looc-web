@@ -21,8 +21,16 @@ def get_model():
     return model
 
 
-def transform_image(image_bytes: BinaryIO) -> int:
-    '''Apply transform to image before passing on to the model'''
+def transform_image(image_bytes: BinaryIO) -> torch.Tensor:
+    '''
+    Apply transform to image before passing on to the model
+
+    Args:
+        image_bytes: binary image to be processed
+
+    Returns:
+        Image tensor after appliying transforms
+    '''
     my_transforms = transforms.Compose([transforms.ToTensor(),
                                         transforms.Normalize(
                                             mean=[0.485, 0.456, 0.406],

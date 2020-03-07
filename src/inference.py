@@ -7,9 +7,17 @@ model = get_model()
 
 
 def get_prediction(image_bytes: BinaryIO) -> int:
-    '''Get an image binary as input, apply the required transforms,
+    '''
+    Get an image binary as input, apply the required transforms,
     pass returned tensor through the model and return the sum of the
-    resulting value'''
+    resulting value
+
+    Args:
+        image_bytes: binary image to be processed
+
+    Returns:
+        The sum of elements returned by the model
+    '''
     tensor = transform_image(image_bytes=image_bytes)
     output = model(tensor)
     det = output.detach().cpu()
