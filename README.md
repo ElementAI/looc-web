@@ -6,5 +6,5 @@ Web interface for the LooC project
 `git clone git@github.com:ElementAI/looc-web.git`
 
 #### Instantiate web server
-`$ cd looc-web`
-`gunicorn -w 2 -b <IP> wsgi:app`
+```$ cd looc-web
+$ gunicorn -w 2 -b <IP> wsgi:app```
