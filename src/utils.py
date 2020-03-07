@@ -1,5 +1,7 @@
 import io
 
+from typing import BinaryIO
+
 import torch
 import torchvision.transforms as transforms
 
@@ -9,6 +11,8 @@ from PIL import Image
 
 
 def get_model():
+    '''Instantiate and prepare the model
+    Load checkpoint'''
     model = CSRNet()
     model = model.cuda()
     model.eval()
@@ -17,7 +21,8 @@ def get_model():
     return model
 
 
-def transform_image(image_bytes):
+def transform_image(image_bytes: BinaryIO) -> int:
+    '''Apply transform to image before passing on to the model'''
     my_transforms = transforms.Compose([transforms.ToTensor(),
                                         transforms.Normalize(
                                             mean=[0.485, 0.456, 0.406],

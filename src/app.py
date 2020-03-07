@@ -1,7 +1,6 @@
 import os
 
 from inference import get_prediction
-
 from flask import Flask, render_template, request, redirect
 
 
