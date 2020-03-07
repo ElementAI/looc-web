@@ -1,6 +1,6 @@
 from typing import BinaryIO
 
-from utils import transform_image, get_model
+from .utils import transform_image, get_model
 
 
 model = get_model()
