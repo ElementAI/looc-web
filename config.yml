@@ -1,0 +1,3 @@
+model:
+  architecture: CSRNet
+  checkpoint: model_best.pth.tar
